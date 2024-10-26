@@ -24,25 +24,38 @@
             color: #333;
         }
         .button {
+            position: relative;
             display: inline-block;
-            padding: 15px 25px;
             margin: 10px;
+            border: none;
+            border-radius: 10px;
+            overflow: hidden;
+            cursor: pointer;
+            width: 150px; /* Set button width */
+            height: 150px; /* Set button height */
+            background-color: #007BFF; /* Default background color */
+        }
+        .button img {
+            width: 100%;
+            height: 100%;
+            border-radius: 10px; /* Match button border radius */
+            transition: transform 0.3s;
+        }
+        .button:hover img {
+            transform: scale(1.1); /* Image zoom effect on hover */
+        }
+        .button .text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
             color: #fff;
-            background-color: #007BFF; /* Change this for button color */
-            text-decoration: none;
-            border-radius: 10px; /* Adjust border radius for roundness */
-            font-size: 1.1em; /* Adjust font size */
-            transition: background-color 0.3s, transform 0.2s, box-shadow 0.2s;
+            font-size: 1.2em;
+            opacity: 0; /* Hide text initially */
+            transition: opacity 0.3s;
         }
-        .button:hover {
-            background-color: #0056b3; /* Hover color */
-            transform: scale(1.05);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow effect */
-        }
-        .button:active {
-            background-color: #004494; /* Active color */
-            transform: scale(0.95);
-            box-shadow: none;
+        .button:hover .text {
+            opacity: 1; /* Show text on hover */
         }
         footer {
             text-align: center;
@@ -58,13 +71,21 @@
         <p>Hello! I'm [Your Name]. Here are some links to my work:</p>
     </header>
     <main>
-        <a href="#" class="button">Portfolio</a>
-        <a href="#" class="button">About Me</a>
-        <a href="#" class="button">Contact</a>
+        <a href="#" class="button">
+            <img src="portfolio.jpg" alt="Portfolio">
+            <span class="text">Portfolio</span>
+        </a>
+        <a href="#" class="button">
+            <img src="about.jpg" alt="About Me">
+            <span class="text">About Me</span>
+        </a>
+        <a href="#" class="button">
+            <img src="contact.jpg" alt="Contact">
+            <span class="text">Contact</span>
+        </a>
     </main>
     <footer>
         <p>&copy; 2024 [Your Name]. All rights reserved.</p>
     </footer>
 </body>
 </html>
-
